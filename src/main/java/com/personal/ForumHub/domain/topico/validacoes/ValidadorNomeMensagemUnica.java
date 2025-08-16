@@ -1,5 +1,4 @@
 package com.personal.ForumHub.domain.topico.validacoes;
-
 import com.personal.ForumHub.domain.topico.TopicoDTO;
 import com.personal.ForumHub.domain.topico.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +11,9 @@ public class ValidadorNomeMensagemUnica implements ValidadorCriacaoTopico{
     private TopicoRepository topicoRepository;
 
     public void validar(TopicoDTO dados) {
-        var topicoDuplicado = ! topicoRepository.existsByTituloAndMensagem(dados.titulo(), dados.mensagem());
+        var isTopicoDuplicado = ! topicoRepository.existsByTituloAndMensagem(dados.titulo(), dados.mensagem());
 
-        if (!topicoDuplicado){
+        if (!isTopicoDuplicado){
             throw new ValidacaoException("Já existe um tópico com este título e mensagem");
         }
     }
