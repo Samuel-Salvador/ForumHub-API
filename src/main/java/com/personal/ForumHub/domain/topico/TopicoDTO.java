@@ -25,4 +25,8 @@ public record TopicoDTO(
         @NotBlank
         String curso
 ) {
+
+    public TopicoDTO(Topico topico){
+        this(topico.getTitulo(), topico.getMensagem(), topico.getData(), topico.getEstado(), topico.getAutor(), topico.getCurso());
+    }
 }
