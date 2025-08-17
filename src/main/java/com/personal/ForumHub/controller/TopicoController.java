@@ -5,6 +5,7 @@ import com.personal.ForumHub.domain.topico.TopicoRepository;
 import com.personal.ForumHub.domain.topico.TopicoService;
 import com.personal.ForumHub.domain.topico.UpdateTopicoDTO;
 import jakarta.validation.Valid;
+import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -50,5 +51,15 @@ public class TopicoController {
         var updatedTopico = topicoService.updateTopico(dados, id);
 
         return ResponseEntity.ok(updatedTopico);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteTopico(@PathVariable Long id) {
+        var topicoOptional = topicoRepository.findById(id);
+
+        if (topicoOptional.isEmpty()) return ResponseEntity.notFound().build();
+
+        topicoRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }
