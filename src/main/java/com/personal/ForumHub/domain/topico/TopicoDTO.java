@@ -29,4 +29,9 @@ public record TopicoDTO(
     public TopicoDTO(Topico topico){
         this(topico.getTitulo(), topico.getMensagem(), topico.getData(), topico.getEstado(), topico.getAutor(), topico.getCurso());
     }
+
+    public TopicoDTO(UpdateTopicoDTO newData){
+        this(newData.titulo(),newData.mensagem(),newData.data(), newData.estado(), newData.autor(), newData.curso());
+    }
+
 }

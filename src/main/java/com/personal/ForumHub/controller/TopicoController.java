@@ -3,6 +3,7 @@ package com.personal.ForumHub.controller;
 import com.personal.ForumHub.domain.topico.TopicoDTO;
 import com.personal.ForumHub.domain.topico.TopicoRepository;
 import com.personal.ForumHub.domain.topico.TopicoService;
+import com.personal.ForumHub.domain.topico.UpdateTopicoDTO;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -35,5 +36,19 @@ public class TopicoController {
         var topicoDTOList = topicoList.stream().map(TopicoDTO::new).toList();
 
         return ResponseEntity.ok(topicoDTOList);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<TopicoDTO> getEspecificTopico(@PathVariable Long id) {
+        var topico = topicoRepository.getReferenceById(id);
+
+        return ResponseEntity.ok(new TopicoDTO(topico));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<TopicoDTO> updateTopico(@PathVariable Long id, @RequestBody @Valid UpdateTopicoDTO dados){
+        var updatedTopico = topicoService.updateTopico(dados, id);
+
+        return ResponseEntity.ok(updatedTopico);
     }
 }
