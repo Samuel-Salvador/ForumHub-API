@@ -33,4 +33,4 @@ Veja como é a documentação interativa da API:
 
 Para acesso a documentação é necessário rodar a aplicação e acessar o link de host local: 
 
-```http://localhost:{server-port}/swagger-ui/index.html ```
+```http://localhost:{server-port}/swagger-ui/index.html```
