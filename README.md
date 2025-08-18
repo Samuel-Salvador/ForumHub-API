@@ -31,5 +31,6 @@ Veja como é a documentação interativa da API:
 
 <img src="docs/swagger-ui.png" alt="Swagger UI" width="800" style="border-radius: 4px;">
 
-Para acesso a documentação é necessário rodar a aplicação e acessar o link de host local: http://localhost:8080/swagger-ui/index.html
+Para acesso a documentação é necessário rodar a aplicação e acessar o link de host local: 
 
+```http://localhost:{server-port}/swagger-ui/index.html ```
