@@ -35,14 +35,15 @@ API REST para gerenciamento de tópicos de fórum, permitindo operações de CRU
 2. Configure o banco de dados:
      - Certifique-se de ter o MySQL instalado e rodando.
      - Crie um banco de dados para o projeto (exemplo: forumhub_db). 
-     - Altere as configurações de acesso ao banco no arquivo src/main/resources/application.properties:
-   
+     - Altere as configurações de acesso ao banco no arquivo src/main/resources/application.properties:  
+
     ```
     spring.datasource.url = jdbc:mysql://localhost:3306/forumhub_db 
     spring.datasource.username = SEU_USUARIO_MYSQL
     spring.datasource.password = SUA_SENHA_MYSQL
     server.port = 8080
     ```
+
 3. Compile o projeto, no terminal, execute:
     ```
     mvn clean install
