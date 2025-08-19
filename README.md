@@ -25,12 +25,40 @@ API REST para gerenciamento de tópicos de fórum, permitindo operações de CRU
 - Autenticação JWT
 - Documentação interativa via Swagger
 
+## 🛠️ Como rodar o projeto
+
+1. **Clone o repositório e abra a pasta no terminal:**
+   ``` 
+   git clone https://github.com/Samuel-Salvador/ForumHub-API
+   cd ForumHub-API 
+   ```
+2. Configure o banco de dados:
+     - Certifique-se de ter o MySQL instalado e rodando.
+     - Crie um banco de dados para o projeto (exemplo: forumhub_db). 
+     - Altere as configurações de acesso ao banco no arquivo src/main/resources/application.properties:
+   
+    ```
+    spring.datasource.url = jdbc:mysql://localhost:3306/forumhub_db 
+    spring.datasource.username = SEU_USUARIO_MYSQL
+    spring.datasource.password = SUA_SENHA_MYSQL
+    server.port = 8080
+    ```
+3. Compile o projeto, no terminal, execute:
+    ```
+    mvn clean install
+    ```
+   
+4. Execute a aplicação:
+
+    ```
+    mvn spring-boot:run
+    ```
+   
 ## 📄 Documentação
 
 Veja como é a documentação interativa da API:
 
 <img src="docs/swagger-ui.png" alt="Swagger UI" width="800" style="border-radius: 4px;">
 
-Para acesso a documentação é necessário rodar a aplicação e acessar o link de host local: 
-
-```http://localhost:{server-port}/swagger-ui/index.html```
+Para acesso a documentação é necessário rodar a aplicação e acessar o link no navegador:
+http://localhost:8080/swagger-ui/index.html
