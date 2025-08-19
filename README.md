@@ -5,7 +5,8 @@
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?logo=mysql)
 ![Maven](https://img.shields.io/badge/Maven-Build-red?logo=apachemaven)
 
-API REST para gerenciamento de tópicos de fórum, permitindo operações de CRUD (criar, listar, atualizar e remover tópicos).
+API REST para gerenciamento de tópicos de fórum, permitindo operações de CRUD (criar, listar, atualizar e remover tópicos), utilizando um controle de acesso por meio de [JWT](https://www.jwt.io/introduction#what-is-json-web-token).
+O código segue a estrutura padrão de projetos Spring e utiliza as principais bibliotecas do ecossistema Java para facilitar o desenvolvimento (Lombok), segurança (Spring Security), documentação (Swagger) e integração com banco de dados (Spring Data JPA). 
 
 ---
 
